@@ -2,48 +2,25 @@ import { IExperience } from '../component/experience/IExperience';
 
 const experience: IExperience.Payload = {
   disable: false,
-  disableTotalPeriod: false,
+  disableTotalPeriod: true,
   list: [
     {
-      title: 'Linux Foundation',
+      title: 'Fiveworks / 풀스택 개발자 (Intern)',
+      disableEachPeriod: true,
       positions: [
         {
-          title: 'System Engineer',
-          startedAt: '1996-05',
+          title:
+            '빅데이터팀, Omnimix 서비스 (<a href="omnimix-ai.com">omnimix-ai.com</a>) :\n네트워크 약리학의 약재 성분 및 유전자 분석 서비스.\n2,500만개의 대용량 데이터를 처리하며, 전반적인 Backend 및 Frontend 개발을 담당.',
+          startedAt: '2024-07',
+          endedAt: '2024-09',
           descriptions: [
             'Steering Kernel patching and updates for various distributions',
             'Automating deployment and integration processes for Linux servers',
             'Spearheading initiatives to enhance Linux kernel security',
             'Collaborating with global developers to coordinate code contributions',
           ],
-          skillKeywords: ['C', 'Linux', 'Kernel', 'Security', 'Automation'],
-        },
-        {
-          title: 'System Engineer Intern',
-          startedAt: '1996-02',
-          endedAt: '1996-05',
-          descriptions: [
-            'Assisted senior engineers in maintaining and updating kernel patches for Linux distributions',
-            'Supported deployment and integration tasks for Linux server environments',
-            'Conducted research on Linux kernel security practices and presented findings to the team',
-          ],
-          skillKeywords: ['C', 'Linux', 'Kernel', 'Support', 'Research'],
-        },
-      ],
-    },
-    {
-      title: 'Open Source Community',
-      positions: [
-        {
-          title: 'System Advocate and Developer',
-          startedAt: '2010-06',
-          endedAt: '2018-01',
-          descriptions: [
-            'Promoted the use and development of Linux globally.',
-            'Developed automated scripts to streamline system configuration.',
-            'Facilitated live patching systems, reducing downtime.',
-          ],
-          skillKeywords: ['Open Source', 'Linux', 'AWS', 'RDBMS'],
+          backendSkillKeywords: ['Spring Boot', 'Java', 'Spring Security', 'JWT', 'MongoDB'],
+          frontendSkillKeywords: ['React.js', 'TypeScript', 'React Query', 'Recoil'],
         },
       ],
     },

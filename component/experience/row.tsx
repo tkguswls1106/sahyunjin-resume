@@ -71,9 +71,11 @@ export default function ExperienceRow({
                   재직 중
                 </Badge>
               )}
-              <Badge color="info" className="ml-1">
-                {Util.getFormattingDuration(minStartedAt, maxEndedAt)}
-              </Badge>
+              {!item.disableEachPeriod && (
+                <Badge color="info" className="ml-1">
+                  {Util.getFormattingDuration(minStartedAt, maxEndedAt)}
+                </Badge>
+              )}
             </span>
           </h4>
         </Col>
@@ -90,14 +92,18 @@ export default function ExperienceRow({
               </span>
             )}
           </Col>
-          <Col sm={12} md={9}>
-            <i style={Style.gray}>{position.title}</i>
+          <Col sm={12} md={9} style={{ whiteSpace: 'pre-line' }}>
+            <PositionTitleWithLink title={position.title} />
             <ul className="pt-2">
               {position.descriptions.map((description, descIndex) => (
                 <li key={descIndex.toString()}>{description}</li>
               ))}
-              {createSkillKeywords(position.skillKeywords)}
             </ul>
+            {createSkillKeywords(
+              position.skillKeywords,
+              position.backendSkillKeywords,
+              position.frontendSkillKeywords,
+            )}
           </Col>
         </Row>
       ))}
@@ -130,26 +136,68 @@ function createOverallWorkingPeriod(positions: PositionWithDates[]) {
   return `${startedAt.toFormat(DATE_FORMAT)} ~ ${endedAt.toFormat(DATE_FORMAT)}`;
 }
 
-function createSkillKeywords(skillKeywords?: string[]) {
-  if (!skillKeywords) {
+function createSkillKeywords(
+  skillKeywords?: string[],
+  backendSkillKeywords?: string[],
+  frontendSkillKeywords?: string[],
+) {
+  if (!skillKeywords && !backendSkillKeywords && !frontendSkillKeywords) {
     return null;
   }
   return (
-    <li>
-      <strong>Skill Keywords</strong>
-      <div>
-        {skillKeywords.map((keyword, index) => (
-          <Badge
-            style={Style.skillKeywordBadge}
-            key={index.toString()}
-            color="secondary"
-            className="mr-1"
-          >
-            {keyword}
-          </Badge>
-        ))}
-      </div>
-    </li>
+    <>
+      {skillKeywords && skillKeywords.length > 0 && (
+        <li>
+          <strong>Skills&nbsp;:&nbsp;</strong>
+          <div style={{ display: 'inline-block' }}>
+            {skillKeywords.map((keyword, index) => (
+              <Badge
+                style={Style.skillKeywordBadge}
+                key={index.toString()}
+                color="secondary"
+                className="mr-1"
+              >
+                {keyword}
+              </Badge>
+            ))}
+          </div>
+        </li>
+      )}
+      {backendSkillKeywords && backendSkillKeywords.length > 0 && (
+        <li>
+          <strong>Backend Skills&nbsp;:&nbsp;</strong>
+          <div style={{ display: 'inline-block' }}>
+            {backendSkillKeywords.map((keyword, index) => (
+              <Badge
+                style={Style.skillKeywordBadge}
+                key={index.toString()}
+                color="secondary"
+                className="mr-1"
+              >
+                {keyword}
+              </Badge>
+            ))}
+          </div>
+        </li>
+      )}
+      {frontendSkillKeywords && frontendSkillKeywords.length > 0 && (
+        <li>
+          <strong>Frontend Skills&nbsp;:&nbsp;</strong>
+          <div style={{ display: 'inline-block' }}>
+            {frontendSkillKeywords.map((keyword, index) => (
+              <Badge
+                style={Style.skillKeywordBadge}
+                key={index.toString()}
+                color="secondary"
+                className="mr-1"
+              >
+                {keyword}
+              </Badge>
+            ))}
+          </div>
+        </li>
+      )}
+    </>
   );
 }
 
@@ -161,4 +209,31 @@ function createWorkingPeriod(startedAt: DateTime, endedAt?: DateTime | null) {
   }
 
   return `${startedAt.toFormat(DATE_FORMAT)} ~ ${endedAt.toFormat(DATE_FORMAT)}`;
+}
+
+function PositionTitleWithLink({ title }: { title: string }) {
+  return (
+    <i style={Style.gray}>
+      {title.split(/(<a.*?<\/a>)/g).map((fullText, index) => {
+        const linkMatch = fullText.match(/<a href="(.*?)">(.*?)<\/a>/);
+        if (linkMatch) {
+          const [_, link, linkContent] = linkMatch;
+          return (
+            <a
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              style={{ color: 'blue' }}
+              href={`http://${link}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {linkContent}
+            </a>
+          );
+        }
+        // eslint-disable-next-line react/no-array-index-key
+        return <span key={index}>{fullText}</span>;
+      })}
+    </i>
+  );
 }

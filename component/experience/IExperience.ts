@@ -19,6 +19,9 @@ export declare namespace IExperience {
     /** ### (직장)경험 명 */
     title: string;
 
+    /** ### 각각의 기간 표시 유/무 */
+    disableEachPeriod?: boolean;
+
     /** ### (직장)수행한 직위/직책 포지션 정보 */
     positions: Position[];
   }
@@ -59,5 +62,7 @@ export declare namespace IExperience {
      */
 
     skillKeywords?: string[];
+    backendSkillKeywords?: string[];
+    frontendSkillKeywords?: string[];
   }
 }
