@@ -32,7 +32,7 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
         <Col sm={12} md={3}>
           <h2 style={Style.blue}>INTRODUCE</h2>
         </Col>
-        <Col sm={12} md={9} style={{ whiteSpace: 'pre-line', fontSize: '18px', fontWeight: '400' }}>
+        <Col sm={12} md={9} style={{ whiteSpace: 'pre-line', fontSize: '18px', fontWeight: 400 }}>
           {payload.contents.map((content, index) => (
             <p key={index.toString()}>{content}</p>
           ))}

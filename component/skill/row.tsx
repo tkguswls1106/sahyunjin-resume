@@ -86,7 +86,7 @@ function createCalculatedSkillItems(items: ISkill.Item[], isVerticalScreen: bool
             <ul>
               {skills.map((skill, skillIndex) => {
                 return (
-                  <li key={skillIndex.toString()}>
+                  <li key={skillIndex.toString()} style={{ whiteSpace: 'pre-line' }}>
                     {createBadge(skill.level)}
                     {skill.title}
                   </li>

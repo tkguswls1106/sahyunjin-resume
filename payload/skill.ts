@@ -162,17 +162,119 @@ const misc: ISkill.Skill = {
   ],
 };
 
+// ================= //
+
+const backend: ISkill.Skill = {
+  category: 'Back-End',
+  items: [
+    {
+      title: 'Spring Boot',
+    },
+    {
+      title: 'Java',
+    },
+    {
+      title: 'Spring Security',
+    },
+    {
+      title: 'JWT',
+    },
+    {
+      title: 'STOMP',
+    },
+    {
+      title: 'RabbitMQ',
+    },
+  ],
+};
+
+const frontend: ISkill.Skill = {
+  category: 'Front-End',
+  items: [
+    {
+      title: 'React.js',
+    },
+    {
+      title: 'TypeScript',
+    },
+    {
+      title: 'JavaScript',
+    },
+  ],
+};
+
+// const devops: ISkill.Skill = {
+//   category: 'DevOps',
+//   items: [
+//     // {
+//     //   title: 'AWS (Elastic BeanStalk, RDS, CloudWatch 등)',
+//     // },
+//     {
+//       title: 'AWS Amplify,\nElastic BeanStalk',
+//     },
+//     {
+//       title: 'AWS RDS,\nCloudWatch 등',
+//     },
+//     {
+//       title: 'Load Balancer,\nAuto Scaling',
+//     },
+//   ],
+// };
+
+const devops: ISkill.Skill = {
+  category: 'DevOps',
+  items: [
+    // {
+    //   title: 'AWS (Elastic BeanStalk, RDS, CloudWatch 등)',
+    // },
+    {
+      title: 'AWS Amplify',
+    },
+    {
+      title: 'Elastic BeanStalk',
+    },
+    {
+      title: 'RDS',
+    },
+    {
+      title: 'CloudWatch',
+    },
+    {
+      title: 'Load Balancer',
+    },
+    {
+      title: 'Auto Scaling',
+    },
+  ],
+};
+
+const database: ISkill.Skill = {
+  category: 'Database',
+  items: [
+    {
+      title: 'MySQL',
+    },
+    {
+      title: 'MongoDB',
+    },
+  ],
+};
+
 const skill: ISkill.Payload = {
   disable: false,
   skills: [
-    programmingLanguages,
-    kernelDevelopment,
-    virtualization,
-    automation,
-    networkSecurity,
-    misc,
+    // programmingLanguages,
+    // kernelDevelopment,
+    // virtualization,
+    // automation,
+    // networkSecurity,
+    // misc,
+    backend,
+    frontend,
+    devops,
+    database,
   ],
-  tooltip: '1: 기초 수준\n2: 취미 개발 수준\n3: Production 개발 가능 수준',
+  // tooltip: '1: 기초 수준\n2: 취미 개발 수준\n3: Production 개발 가능 수준',
 };
 
 export default skill;
