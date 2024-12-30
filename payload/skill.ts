@@ -164,6 +164,30 @@ const misc: ISkill.Skill = {
 
 // ================= //
 
+// const backend: ISkill.Skill = {
+//   category: 'Back-End',
+//   items: [
+//     {
+//       title: 'Spring Boot',
+//     },
+//     {
+//       title: 'Java',
+//     },
+//     {
+//       title: 'Spring Security',
+//     },
+//     {
+//       title: 'JWT',
+//     },
+//     {
+//       title: 'STOMP',
+//     },
+//     {
+//       title: 'RabbitMQ',
+//     },
+//   ],
+// };
+
 const backend: ISkill.Skill = {
   category: 'Back-End',
   items: [
@@ -171,19 +195,10 @@ const backend: ISkill.Skill = {
       title: 'Spring Boot',
     },
     {
+      title: 'Security, JWT',
+    },
+    {
       title: 'Java',
-    },
-    {
-      title: 'Spring Security',
-    },
-    {
-      title: 'JWT',
-    },
-    {
-      title: 'STOMP',
-    },
-    {
-      title: 'RabbitMQ',
     },
   ],
 };
@@ -221,41 +236,59 @@ const frontend: ISkill.Skill = {
 //   ],
 // };
 
-const devops: ISkill.Skill = {
-  category: 'DevOps',
+// const devops: ISkill.Skill = {
+//   category: 'DevOps',
+//   items: [
+//     // {
+//     //   title: 'AWS (Elastic BeanStalk, RDS, CloudWatch 등)',
+//     // },
+//     {
+//       title: 'AWS Amplify',
+//     },
+//     {
+//       title: 'Elastic BeanStalk',
+//     },
+//     {
+//       title: 'RDS',
+//     },
+//     {
+//       title: 'CloudWatch',
+//     },
+//     {
+//       title: 'Load Balancer',
+//     },
+//     {
+//       title: 'Auto Scaling',
+//     },
+//   ],
+// };
+
+// const database: ISkill.Skill = {
+//   category: 'Database',
+//   items: [
+//     {
+//       title: 'MySQL',
+//     },
+//     {
+//       title: 'MongoDB',
+//     },
+//   ],
+// };
+
+const dbDevops: ISkill.Skill = {
+  category: 'DB & DevOps',
   items: [
     // {
     //   title: 'AWS (Elastic BeanStalk, RDS, CloudWatch 등)',
     // },
     {
-      title: 'AWS Amplify',
-    },
-    {
-      title: 'Elastic BeanStalk',
-    },
-    {
-      title: 'RDS',
-    },
-    {
-      title: 'CloudWatch',
-    },
-    {
-      title: 'Load Balancer',
-    },
-    {
-      title: 'Auto Scaling',
-    },
-  ],
-};
-
-const database: ISkill.Skill = {
-  category: 'Database',
-  items: [
-    {
       title: 'MySQL',
     },
     {
       title: 'MongoDB',
+    },
+    {
+      title: 'AWS',
     },
   ],
 };
@@ -271,8 +304,9 @@ const skill: ISkill.Payload = {
     // misc,
     backend,
     frontend,
-    devops,
-    database,
+    // devops,
+    // database,
+    dbDevops,
   ],
   // tooltip: '1: 기초 수준\n2: 취미 개발 수준\n3: Production 개발 가능 수준',
 };
