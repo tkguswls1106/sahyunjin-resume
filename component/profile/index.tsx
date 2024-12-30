@@ -52,7 +52,7 @@ function createNameArea(name: Payload['name']) {
 function createProfileContactMap(contacts: Payload['contact']) {
   return (
     <Row>
-      <Col className="pt-3">
+      <Col className="pt-3 pt-lg-5">
         {contacts.map((contact, index) => (
           <ProfileContact key={index.toString()} payload={contact} />
         ))}
@@ -64,10 +64,12 @@ function createProfileContactMap(contacts: Payload['contact']) {
 function createNoticeArea(notice: Payload['notice']) {
   return (
     <EmptyRowCol>
-      <Alert color="secondary" role="alert" className="mt-3">
-        {notice.icon ? <FontAwesomeIcon className="mr-2" icon={notice.icon} /> : ''}
-        {notice.title}
-      </Alert>
+      {notice && (
+        <Alert color="secondary" role="alert" className="mt-3">
+          {notice.icon ? <FontAwesomeIcon className="mr-2" icon={notice.icon} /> : ''}
+          {notice.title}
+        </Alert>
+      )}
     </EmptyRowCol>
   );
 }

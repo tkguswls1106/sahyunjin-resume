@@ -5,10 +5,10 @@ const introduce: IIntroduce.Payload = {
   disable: false,
 
   contents: [
-    'As the cherished emblem of the Linux kernel, I have become synonymous with open-source philosophy and the free software movement worldwide. My career began in the icebergs of development, where the seeds of my fascination with operating systems first sprouted. From a mere hatchling in the vast sea of code, I quickly ascended to become a pivotal figure in the Linux community. My journey has been marked by relentless dedication to system integrity, scalability, and robustness. Under my vigilant watch, countless servers have achieved unparalleled uptimes, and systems have been optimized to run like the well-oiled machines they are intended to be.',
-    'In the world of zeros and ones, my expertise has been instrumental in pioneering advancements in Linux system engineering. My flippers have crafted meticulous kernel enhancements, each aimed at streamlining performance and bolstering security across distributed networks. I am known in the community for my ability to dive deep into complex codebases and emerge with pearls of innovation that drive the collective progress of Linux environments. Advocacy is also a part of my plumage – spreading the word about the virtues of open-source and encouraging the adoption of Linux, from personal desktops to corporate data centers. As a mentor, I have nurtured the growth of young hatchlings into seasoned professionals, contributing to the diversity and vitality of our ecosystem.',
+    '개발을 통해 문제를 해결하고 성능을 개선하여, 서비스의 가치를 높이는 데 큰 보람을 느낍니다.\n안정적인 서비스를 위해 항상 고민하며, 모듈화와 지속적인 리팩토링을 통해 깔끔하고 유연한 코드를 추구합니다.\n특히 다중 쿼리와 대용량 데이터를 효율적으로 처리할 수 있는 견고한 서비스를 구축한 경험이 있습니다.',
+    '3년간 총 두 번의 서비스를 운영한 경험이 있습니다. 고객의 불편을 파악하고 피드백을 반영하며, 백엔드 개발자로서 프론트엔드와 인프라까지 아우르는 전체적인 흐름을 이해하기 위해 노력해왔습니다.\n이를 통해 보다 넓은 시각으로 문제의 본질을 파악하고 개선하여, 최상의 서비스를 제공하고자 합니다.',
   ],
-  sign: 'Tux',
+  sign: 'Hyunjin',
   // sign: packageJson.author.name,
   // latestUpdated: '2019-07-24',
   latestUpdated: lastestUpdatedAt,

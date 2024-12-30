@@ -32,21 +32,21 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
         <Col sm={12} md={3}>
           <h2 style={Style.blue}>INTRODUCE</h2>
         </Col>
-        <Col sm={12} md={9}>
+        <Col sm={12} md={9} style={{ whiteSpace: 'pre-line', fontSize: '18px', fontWeight: '400' }}>
           {payload.contents.map((content, index) => (
             <p key={index.toString()}>{content}</p>
           ))}
-          <p className="text-right">
+          {/* <p className="text-right">
             <small>Latest Updated</small>{' '}
             <Badge color="secondary">
               {`${latestUpdated.toFormat(
                 Util.LUXON_DATE_FORMAT.YYYY_DOT_LL_DOT_DD,
               )} (D+${latestUpdatedByNow})`}
             </Badge>
-          </p>
-          <p className="text-right" style={Style.sign}>
+          </p> */}
+          {/* <p className="text-right" style={Style.sign}>
             {payload.sign}
-          </p>
+          </p> */}
         </Col>
       </Row>
     </div>
