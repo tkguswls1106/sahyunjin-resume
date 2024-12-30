@@ -22,6 +22,9 @@ export declare namespace IExperience {
     /** ### 각각의 기간 표시 유/무 */
     disableEachPeriod?: boolean;
 
+    /** ### 소속 팀명 */
+    team?: string;
+
     /** ### (직장)수행한 직위/직책 포지션 정보 */
     positions: Position[];
   }

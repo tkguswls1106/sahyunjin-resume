@@ -64,7 +64,7 @@ export default function ExperienceRow({
         </Col>
         <Col sm={12} md={9}>
           <h4 style={{ display: 'inline-flex', alignItems: 'center' }}>
-            {item.title}{' '}
+            {item.title}&nbsp;&nbsp;{' '}
             <span style={{ fontSize: '65%', display: 'inline-flex', alignItems: 'center' }}>
               {isCurrentlyEmployed && (
                 <Badge color="primary" className="ml-1">
@@ -78,6 +78,11 @@ export default function ExperienceRow({
               )}
             </span>
           </h4>
+          {item.team && (
+            <span>
+              <i style={{ color: '#212529' }}>- {item.team}</i>
+            </span>
+          )}
         </Col>
       </Row>
 
@@ -222,8 +227,8 @@ function PositionTitleWithLink({ title }: { title: string }) {
             <a
               // eslint-disable-next-line react/no-array-index-key
               key={index}
-              style={{ color: 'blue' }}
-              href={`http://${link}`}
+              style={{ fontWeight: 400, color: '#41474c', textDecoration: 'underline' }}
+              href={`https://${link}`}
               target="_blank"
               rel="noreferrer"
             >
