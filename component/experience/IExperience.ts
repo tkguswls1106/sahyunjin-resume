@@ -57,7 +57,7 @@ export declare namespace IExperience {
      * @todo `IRow.Description[]` 으로 변경
      */
 
-    descriptions: string[];
+    descriptions: Description[];
     /**
      * ### (직장)경험의 키워드
      *
@@ -67,5 +67,12 @@ export declare namespace IExperience {
     skillKeywords?: string[];
     backendSkillKeywords?: string[];
     frontendSkillKeywords?: string[];
+  }
+
+  export interface Description {
+    feature?: string; // 구현 기능
+    problem?: string; // 문제
+    solve?: string; // 해결 과정
+    result?: string; // 성과
   }
 }

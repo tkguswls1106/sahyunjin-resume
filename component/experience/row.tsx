@@ -97,11 +97,24 @@ export default function ExperienceRow({
               </span>
             )}
           </Col>
-          <Col sm={12} md={9} style={{ whiteSpace: 'pre-line' }}>
+          <Col sm={12} md={9} style={{ whiteSpace: 'pre-line', wordBreak: 'normal' }}>
             <PositionTitleWithLink title={position.title} />
-            <ul className="pt-2">
+            <ul style={{ paddingLeft: '20px' }}>
               {position.descriptions.map((description, descIndex) => (
-                <li key={descIndex.toString()}>{description}</li>
+                <li className="pt-3" key={descIndex.toString()}>
+                  <strong>{description.feature}</strong>
+                  <ul style={{ paddingLeft: '20px' }}>
+                    <li>
+                      <strong>문제</strong>&nbsp;:&nbsp;{description.problem}
+                    </li>
+                    <li>
+                      <strong>해결</strong>&nbsp;:&nbsp;{description.solve}
+                    </li>
+                    <li>
+                      <strong>성과</strong>&nbsp;:&nbsp;{description.result}
+                    </li>
+                  </ul>
+                </li>
               ))}
             </ul>
             {createSkillKeywords(
