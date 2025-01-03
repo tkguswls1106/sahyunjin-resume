@@ -72,7 +72,7 @@ export declare namespace IExperience {
   export interface Description {
     feature?: string; // 구현 기능
     problem?: string; // 문제
-    solve?: string; // 해결 과정
-    result?: string; // 성과
+    solve?: string[]; // 해결 과정
+    result?: string[]; // 성과
   }
 }

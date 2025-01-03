@@ -113,13 +113,53 @@ export default function ExperienceRow({
                     {description.solve && (
                       <li>
                         <span style={{ fontWeight: 500 }}>해결</span>&nbsp;:&nbsp;
-                        {description.solve}
+                        {description.solve.length === 1 ? (
+                          description.solve[0]
+                        ) : (
+                          <>
+                            <br />
+                            {description.solve.map((solveItem, solveIndex) => (
+                              <span key={solveIndex.toString()}>
+                                {solveItem.charAt(0) === '→' ? (
+                                  <>
+                                    &nbsp;&nbsp;{solveItem} {/* 첫 번째 문자가 '→'일 때 */}
+                                  </>
+                                ) : (
+                                  <>
+                                    ◦ {solveItem} {/* 첫 번째 문자가 '→'가 아닐 때 */}
+                                  </>
+                                )}
+                                <br />
+                              </span>
+                            ))}
+                          </>
+                        )}
                       </li>
                     )}
                     {description.result && (
                       <li>
                         <span style={{ fontWeight: 500 }}>성과</span>&nbsp;:&nbsp;
-                        {description.result}
+                        {description.result.length === 1 ? (
+                          description.result[0]
+                        ) : (
+                          <>
+                            <br />
+                            {description.result.map((resultItem, resultIndex) => (
+                              <span key={resultIndex.toString()}>
+                                {resultItem.charAt(0) === '→' ? (
+                                  <>
+                                    &nbsp;&nbsp;{resultItem} {/* 첫 번째 문자가 '→'일 때 */}
+                                  </>
+                                ) : (
+                                  <>
+                                    ◦ {resultItem} {/* 첫 번째 문자가 '→'가 아닐 때 */}
+                                  </>
+                                )}
+                                <br />
+                              </span>
+                            ))}
+                          </>
+                        )}
                       </li>
                     )}
                   </ul>
