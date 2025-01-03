@@ -13,6 +13,7 @@ function Component({ payload }: PropsWithChildren<{ payload: IFooter.Payload }>)
   return (
     <Row>
       <Col style={Style.footerCover}>
+        {payload === null && null} {/* 임시 코드 */}
         <div style={Style.footer} className="text-center mt-4" />
       </Col>
     </Row>
