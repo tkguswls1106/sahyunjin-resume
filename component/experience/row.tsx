@@ -1,7 +1,8 @@
 import { Badge, Col, Row } from 'reactstrap';
 
 import { DateTime } from 'luxon';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useState, useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { IExperience } from './IExperience';
 import { Style } from '../common/Style';
 import Util from '../common/Util';
@@ -53,6 +54,12 @@ export default function ExperienceRow({
 
   const periodTitle = createOverallWorkingPeriod(sortedPositions);
   const hasMultiplePositions = sortedPositions.length > 1;
+
+  const [isPC, setIsPC] = useState(false);
+  const isPcMediaQuery = useMediaQuery({ query: '(min-width: 992px)' });
+  useEffect(() => {
+    setIsPC(isPcMediaQuery);
+  }, [isPcMediaQuery]);
 
   return (
     <div>
@@ -143,16 +150,21 @@ export default function ExperienceRow({
                           description.result[0]
                         ) : (
                           <>
-                            <br />
                             {description.result.map((resultItem, resultIndex) => (
-                              <span key={resultIndex.toString()}>
+                              <span
+                                key={resultIndex.toString()}
+                                style={{
+                                  // eslint-disable-next-line no-nested-ternary
+                                  paddingLeft: !isPC ? '0px' : resultIndex !== 0 ? '40px' : '0px',
+                                }}
+                              >
                                 {resultItem.charAt(0) === '→' ? (
                                   <>
                                     &nbsp;&nbsp;{resultItem} {/* 첫 번째 문자가 '→'일 때 */}
                                   </>
                                 ) : (
                                   <>
-                                    ◦ {resultItem} {/* 첫 번째 문자가 '→'가 아닐 때 */}
+                                    {resultItem} {/* 첫 번째 문자가 '→'가 아닐 때 */}
                                   </>
                                 )}
                                 <br />
