@@ -104,18 +104,24 @@ export default function ExperienceRow({
                 <li className="pt-3" key={descIndex.toString()}>
                   <span style={{ fontWeight: 500 }}>{description.feature}</span>
                   <ul style={{ paddingLeft: '20px' }}>
-                    <li>
-                      <span style={{ fontWeight: 500 }}>문제</span>&nbsp;:&nbsp;
-                      {description.problem}
-                    </li>
-                    <li>
-                      <span style={{ fontWeight: 500 }}>해결</span>&nbsp;:&nbsp;
-                      {description.solve}
-                    </li>
-                    <li>
-                      <span style={{ fontWeight: 500 }}>성과</span>&nbsp;:&nbsp;
-                      {description.result}
-                    </li>
+                    {description.problem && (
+                      <li>
+                        <span style={{ fontWeight: 500 }}>문제</span>&nbsp;:&nbsp;
+                        {description.problem}
+                      </li>
+                    )}
+                    {description.solve && (
+                      <li>
+                        <span style={{ fontWeight: 500 }}>해결</span>&nbsp;:&nbsp;
+                        {description.solve}
+                      </li>
+                    )}
+                    {description.result && (
+                      <li>
+                        <span style={{ fontWeight: 500 }}>성과</span>&nbsp;:&nbsp;
+                        {description.result}
+                      </li>
+                    )}
                   </ul>
                 </li>
               ))}
