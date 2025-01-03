@@ -38,10 +38,11 @@ export const Style: Record<TStyleKey, CSSProperties> = {
   },
 
   footerCover: {
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#FFFFFF',
+    // backgroundColor: '#f5f5f5',
     paddingLeft: 0,
     paddingRight: 0,
-    marginTop: '50px',
+    // marginTop: '50px',
     height: '80px',
   },
 

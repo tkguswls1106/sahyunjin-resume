@@ -29,14 +29,16 @@ function Yosume() {
         <Profile.Component payload={Payload.profile} />
         <Introduce.Component payload={Payload.introduce} />
         <Experience.Component payload={Payload.experience} />
-        <Project.Component payload={Payload.project} />
+        {/* <Project.Component payload={Payload.project} /> */}
         <Skill.Component payload={Payload.skill} />
         <Education.Component payload={Payload.education} />
 
         {/* <OpenSource.Component payload={Payload.openSource} /> */}
         {/* <Presentation.Component payload={Payload.presentation} /> */}
-        <Article.Component payload={Payload.article} />
+
+        {/* <Article.Component payload={Payload.article} /> */}
         {/* 위 Article에 Post로 https://velog.io/@tkguswls1106/Github-%EC%95%BD-3%EB%85%84-%ED%9A%8C%EA%B3%A0-%EB%82%98%EC%97%90%EA%B2%8C-1%EC%9D%BC1%EC%BB%A4%EB%B0%8B%EC%9D%80-%EB%AC%B4%EC%8A%A8-%EC%9D%98%EB%AF%B8%EC%98%80%EB%8A%94%EA%B0%80 */}
+
         {/* <Etc.Component payload={Payload.etc} /> */}
         <Footer.Component payload={Payload.footer} />
       </Container>
