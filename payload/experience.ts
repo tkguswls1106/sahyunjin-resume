@@ -82,9 +82,9 @@ const experience: IExperience.Payload = {
               ],
             },
             {
-              feature: '빅데이터 분석 결과의 효과적인 시각화',
+              feature: '빅데이터 분석 결과의 통계 시각화',
               solve: [
-                'React 기반의 표와 다양한 그래프(Cytoscape, Dot Plot, Venn Diagram)로 통계 시각화',
+                'React 기반의 표와 다양한 그래프(Cytoscape, Dot Plot, Venn Diagram)로 효과적인 시각화',
               ],
             },
           ],
